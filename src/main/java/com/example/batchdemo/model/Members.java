@@ -16,13 +16,13 @@ public class Members {
     @NonNull
     private final List<Person> personList;
 
-    public Members getAdultMembers() {
+    public List<Person> getAdultMembers() {
         Predicate<Person> isAdult = p -> {
             Assert.notNull(p.getAge(), String.format("年齢がnullです : %s", p.toString()));
             Assert.isTrue(!"".equals(p.getAge()), String.format("年齢が空です : %s", p.toString()));
             return Integer.parseInt(p.getAge()) >= 20;
         };
         // 年齢が20以上のメンバーを返す
-        return new Members(personList.stream().filter(isAdult).collect(Collectors.toList()));
+        return personList.stream().filter(isAdult).collect(Collectors.toList());
     }
 }

@@ -10,5 +10,5 @@ public interface MembersService {
      * @param members
      * @return insert成功数
      */
-    int insert(Members members);
+    int createMemberInfo(Members members);
 }

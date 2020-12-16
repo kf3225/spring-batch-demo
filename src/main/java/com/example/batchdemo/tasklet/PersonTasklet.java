@@ -49,7 +49,7 @@ public class PersonTasklet implements Tasklet {
             throw new ItemStreamException("");
         }
 
-        membersService.insert(new Members(personList));
+        membersService.createMemberInfo(new Members(personList));
 
         return RepeatStatus.FINISHED;
     }
